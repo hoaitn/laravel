@@ -1,4 +1,4 @@
-## Larawings - Bootstrapped Laravel 5.1 Template
+## Bootstrapped Laravel 5.1 Template
 
 ### What's included?
 
