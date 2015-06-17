@@ -30,6 +30,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		echo 'hi';die;
 		return view('welcome');
 	}
 
