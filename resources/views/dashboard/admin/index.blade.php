@@ -5,7 +5,7 @@
     <div class="content">
         <div class="title">
             <h1>
-                Laravel 5 - Larawings
+                Backend - Dashboard
             </h1>
         </div>
 

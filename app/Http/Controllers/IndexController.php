@@ -1,16 +1,12 @@
-<?php namespace App\Http\Controllers;
+<?php 
+namespace App\Http\Controllers;
 
-class WelcomeController extends Controller {
+class IndexController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Welcome Controller
+	| Index Controller
 	|--------------------------------------------------------------------------
-	|
-	| This controller renders the "marketing page" for the application and
-	| is configured to only allow guests. Like most of the other sample
-	| controllers, you are free to modify or remove it as you desire.
-	|
 	*/
 
 	/**
@@ -20,7 +16,7 @@ class WelcomeController extends Controller {
 	 */
 	public function __construct()
 	{
-		//$this->middleware('guest');
+		
 	}
 
 	/**
@@ -30,8 +26,7 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
-		echo 'hi';die;
-		return view('welcome');
+		return view('home');
 	}
 
 }
