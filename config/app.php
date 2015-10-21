@@ -135,18 +135,19 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\View\ViewServiceProvider::class,
-
+        Illuminate\View\ViewServiceProvider::class,      
+        Aindong\Pluggables\PluggablesServiceProvider::class,
+        Caffeinated\Modules\ModulesServiceProvider::class,
         /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        App\Providers\RouteServiceProvider::class,        
         /*
          * Debugbar
          */
-        'Barryvdh\Debugbar\ServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',        
     ],
 
     /*
@@ -193,8 +194,9 @@ return [
         'Storage'   => Illuminate\Support\Facades\Storage::class,
         'URL'       => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View'      => Illuminate\Support\Facades\View::class,
-
+        'View'      => Illuminate\Support\Facades\View::class,        
+        'Pluggables' => Aindong\Pluggables\Facades\Pluggable::class,
+        'Module' => Caffeinated\Modules\Facades\Module::class,
     ],
 
 ];

@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use \App\Http\Model\User\UserModel as UserModel; 
+use App\User as User; 
 
 use DB;
 
@@ -18,15 +18,18 @@ class UserController extends Controller {
 	| User Admin Controller
 	|--------------------------------------------------------------------------
 	*/
-
-	/**
+        private $_userModel;        
+        
+        /**
 	 * Create a new controller instance.
 	 *
 	 * @return void
 	 */
 	public function __construct()
 	{
-		
+            $this->middleware('auth');
+            //Init Entity Model
+            $this->_userModel = new User();            
 	}
 
 	/**
@@ -35,8 +38,10 @@ class UserController extends Controller {
 	 * @return Response
 	 */
 	public function index()
-	{  
-            $users = DB::table('users')->get();            
+	{              
+            //Get all users
+            $users = $this->_userModel->all();
+            //Response view
             return view('user.backend.index',['users' => $users]);
 	}
         /**
@@ -53,8 +58,26 @@ class UserController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function edit()
+	public function edit($id)
 	{            
             return view('user.backend.edit');
+	}
+        /**
+	 * Show the edit user at backend.
+	 *
+	 * @return Response
+	 */
+	public function delete($id)
+	{            
+            return view('user.backend.edit');
+	}
+        /**
+	 * Show the user profile at backend.
+	 *
+	 * @return Response
+	 */
+	public function profile($id)
+	{            
+            return view('user.backend.profile');
 	}
 }
